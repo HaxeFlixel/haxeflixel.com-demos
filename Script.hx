@@ -24,7 +24,7 @@ class Script {
 	static function build(target:Target) {
 		var args = ["run", "flixel-tools", "buildprojects", Std.string(target)];
 		if (target == Html5) {
-			args = args.concat(["--", "-final"]);
+			args = args.concat(["--", "-dce", "full"]);
 		}
 		runCommand("haxelib", args);
 	}
