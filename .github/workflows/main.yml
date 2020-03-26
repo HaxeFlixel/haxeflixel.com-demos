@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - uses: krdlab/setup-haxe@v1.1.2
+    - run: git clone https://github.com/HaxeFlixel/flixel --branch master
+    - run: haxelib dev flixel flixel
+    - run: haxe --cwd flixel/tests --run RunTravis flash new -install
+    - run: haxe --run Script build flash
+    - run: haxe --run Script build html5
+    - uses: JamesIves/github-pages-deploy-action@3.4.2
+      with:
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BRANCH: binaries
+        FOLDER: bin
