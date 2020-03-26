@@ -29,9 +29,8 @@ class Script {
 
 	static function copy(target:Target, flixelDemos:String) {
 		FileSystem.createDirectory("bin");
-		Sys.setCwd("bin");
 
-		var dir = if (target == Flash) "swf" else "html5";
+		var dir = "bin/" + (if (target == Flash) "swf" else "html5");
 		runCommand("rm", ["-rf", dir]);
 		runCommand("mkdir", [dir]);
 
