@@ -1,0 +1,1 @@
+![CI](https://github.com/HaxeFlixel/haxeflixel.com-demos/workflows/CI/badge.svg)

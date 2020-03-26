@@ -12,11 +12,13 @@ jobs:
       with:
         persist-credentials: false
     - uses: krdlab/setup-haxe@v1.1.2
-    - run: git clone https://github.com/HaxeFlixel/flixel --branch master
+    - run: git clone https://github.com/HaxeFlixel/flixel
     - run: haxelib dev flixel flixel
+    - run: git clone https://github.com/HaxeFlixel/flixel-demos
+    - run: haxelib dev flixel-demos flixel-demos
     - run: haxe --cwd flixel/tests --run RunTravis flash new -install
-    - run: haxe --run Script build flash
-    - run: haxe --run Script build html5
+    - run: haxe --run Script flash flixel-demos
+    - run: haxe --run Script html5 flixel-demos
     - uses: JamesIves/github-pages-deploy-action@3.4.2
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
