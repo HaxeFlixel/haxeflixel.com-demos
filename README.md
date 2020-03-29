@@ -1,1 +1,1 @@
-![CI](https://github.com/HaxeFlixel/haxeflixel.com-demos/workflows/CI/badge.svg)
+[![CI](https://img.shields.io/github/workflow/status/HaxeFlixel/haxeflixel.com-demos/CI.svg?logo=github)](https://github.com/HaxeFlixel/haxeflixel.com-demos/actions?query=workflow%3ACI)
