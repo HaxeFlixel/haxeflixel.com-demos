@@ -19,8 +19,9 @@ jobs:
     - run: haxe --cwd flixel/tests --run RunTravis flash new -install
     - run: haxe --run Script flash flixel-demos
     - run: haxe --run Script html5 flixel-demos
-    - uses: JamesIves/github-pages-deploy-action@3.4.2
+    - uses: JamesIves/github-pages-deploy-action@3.4.3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
         BRANCH: binaries
         FOLDER: bin
+        SINGLE_COMMIT: true
