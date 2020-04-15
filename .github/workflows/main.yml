@@ -18,8 +18,8 @@ jobs:
         haxe-version: stable
         flixel-versions: dev
         target: html5
-    - run: haxe --run Script flash ~/haxe/haxelib/flixel-demos/git
-    - run: haxe --run Script html5 ~/haxe/haxelib/flixel-demos/git
+    - run: haxe --run Script flash ${{env.HAXELIB_REPO}}/flixel-demos/git
+    - run: haxe --run Script html5 ${{env.HAXELIB_REPO}}/flixel-demos/git
     - uses: JamesIves/github-pages-deploy-action@3.4.3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
