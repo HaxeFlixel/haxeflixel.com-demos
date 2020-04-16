@@ -23,6 +23,6 @@ jobs:
     - uses: JamesIves/github-pages-deploy-action@3.4.3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: binaries
+        BRANCH: gh-pages
         FOLDER: bin
         SINGLE_COMMIT: true
