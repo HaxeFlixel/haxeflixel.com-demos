@@ -20,9 +20,10 @@ jobs:
         target: html5
     - run: haxe --run Script flash ${{env.HAXELIB_REPO}}/flixel-demos/git
     - run: haxe --run Script html5 ${{env.HAXELIB_REPO}}/flixel-demos/git
-    - uses: JamesIves/github-pages-deploy-action@3.4.3
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: bin
-        SINGLE_COMMIT: true
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./bin
+        force_orphan: true
+        cname: demos.haxeflixel.com
